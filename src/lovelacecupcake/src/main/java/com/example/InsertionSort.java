@@ -8,7 +8,7 @@ public class InsertionSort {
 
   public static void main(String[] args) {
     String fileName =
-      "C:/Users/redsm/Documents/GitHub/cupcake-sort-csis26/src/lovelacecupcake/src/main/java/com/example/cupcake_3906.json";
+      "C:/Users/redsm/Documents/GitHub/cupcake-sort-csis26/src/lovelacecupcake/src/main/java/com/example/cupcake_test_10.json";
       //"/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_3906.json";
     // v
     //
@@ -77,8 +77,8 @@ public class InsertionSort {
       while (j >= 0 &&  arr[j].compareTo(index) > 0) {
         arr[j+1] = arr[j];
         j -= 1;
-        count++;
       }
+      count++;
       arr[j+1] = index;
     }
     // increase count

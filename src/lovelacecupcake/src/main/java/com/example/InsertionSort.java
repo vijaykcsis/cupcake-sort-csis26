@@ -74,11 +74,13 @@ public class InsertionSort {
       while (j >= 0 &&  arr[j].compareTo(index) > 0) {
         arr[j+1] = arr[j];
         j -= 1;
-        count++;
+        // increase count 
+        // (the counter is useful for measuring 
+        // the efficiency of the program)
+        count++; 
       }
       arr[j+1] = index;
     }
-    // increase count
   }
 
   // swap

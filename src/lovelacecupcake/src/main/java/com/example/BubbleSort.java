@@ -2,17 +2,17 @@ package com.example;
 
 import org.json.simple.*;
 
-public class InsertionSort {
+public class BubbleSort {
 
   private static int count = 0;
 
   public static void main(String[] args) {
     String fileName =
-      "C:/Users/redsm/Documents/GitHub/cupcake-sort-csis26/src/lovelacecupcake/src/main/java/com/example/cupcake_3906.json";
-      // This file path is intended for my computer
-      // The user of this program may need to modify
-      // the above file path so that the program will
-      // work on their computer.
+    "C:/Users/redsm/Documents/GitHub/cupcake-sort-csis26/src/lovelacecupcake/src/main/java/com/example/cupcake_3906.json";
+    // String fileName =
+    //   "/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_10.json";
+
+    // read cupcake names
     JSONArray cupcakeArray = JSONFile.readArray(fileName);
     String[] cupcakeNameArray = nameArray(cupcakeArray);
     System.out.println(cupcakeNameArray);
@@ -22,7 +22,7 @@ public class InsertionSort {
     print(cupcakeNameArray);
 
     // sort
-    insertionSort(cupcakeNameArray);
+    bubbleSort(cupcakeNameArray);
 
     // print sorted list
     System.out.println("----- Sorted array----- ");
@@ -56,29 +56,19 @@ public class InsertionSort {
     return arr;
   }
 
-  // insertion sort method 
-  public static void insertionSort(String[] arr) {
-    // Following the assignment instructions, this
-    // code is adapted from: 
-    // https://www.geeksforgeeks.org/insertion-sort/
-    int L = arr.length;
-    int j;
-    String index;
-    // We define these variables up here 
-    // so that we don't have to redeclare
-    // the variable every time we want to
-    // change its value.
-    for (int i = 1; i < L; i++) {
-      index = arr[i];
-      j = i-1;
-      while (j >= 0 &&  arr[j].compareTo(index) > 0) {
-        arr[j+1] = arr[j];
-        j -= 1;
+  // bubble sort array, O(n^2), unoptimized brute force solution
+  public static void bubbleSort(String[] arr) {
+    for (int i = 0; i < arr.length; i++) {
+      for (int j = 0; j < arr.length; j++) {
+        if (j + 1 < arr.length) {
+          if (arr[j].compareTo(arr[j + 1]) > 0) {
+            swap(arr, j, j + 1);
+          }
+        }
+        // increase count
         count++;
       }
-      arr[j+1] = index;
     }
-    // increase count
   }
 
   // swap

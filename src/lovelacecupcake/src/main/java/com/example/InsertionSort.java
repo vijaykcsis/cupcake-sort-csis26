@@ -8,7 +8,7 @@ public class InsertionSort {
 
   public static void main(String[] args) {
     String fileName =
-      "C:/Users/redsm/Documents/GitHub/cupcake-sort-csis26/src/lovelacecupcake/src/main/java/com/example/cupcake_test_10.json";
+      "C:/Users/redsm/Documents/GitHub/cupcake-sort-csis26/src/lovelacecupcake/src/main/java/com/example/cupcake_3906.json";
       //"/Users/jerom/Documents/GitHub/class-java/sort/demo/src/main/java/com/sort/cupcake_3906.json";
     // v
     //
@@ -61,21 +61,27 @@ public class InsertionSort {
 
   // insertion sort array, O(n^2), unoptimized brute force solution
   public static void insertionSort(String[] arr) {
-    // Following the assignment instructions, this code is adapted from: https://www.geeksforgeeks.org/insertion-sort/
+    // Following the assignment instructions, this
+    // code is adapted from: 
+    // https://www.geeksforgeeks.org/insertion-sort/
     int L = arr.length;
     int j;
+    String index;
+    // We define these variables up here 
+    // so that we don't have to redeclare
+    // the variable every time we want to
+    // change its value.
     for (int i = 1; i < L; i++) {
-      String index = arr[i];
+      index = arr[i];
       j = i-1;
-      while (j >= 0 &&  arr[j].compareTo(arr[i]) > 0)
-      if (arr[j].compareTo(arr[j + 1]) > 0) {
-        swap(arr, j, j + 1);
+      while (j >= 0 &&  arr[j].compareTo(index) > 0) {
+        arr[j+1] = arr[j];
         j -= 1;
+        count++;
       }
       arr[j+1] = index;
     }
     // increase count
-    count++;
   }
 
   // swap

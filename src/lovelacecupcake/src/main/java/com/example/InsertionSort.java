@@ -77,8 +77,8 @@ public class InsertionSort {
       while (j >= 0 &&  arr[j].compareTo(index) > 0) {
         arr[j+1] = arr[j];
         j -= 1;
+        count++;
       }
-      count++;
       arr[j+1] = index;
     }
     // increase count
